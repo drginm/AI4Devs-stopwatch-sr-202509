@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Timer and Countdown</title>
+<link rel="stylesheet" href="styles.css" />
+<!-- Tailwind Play CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { ui: ['ui-sans-serif','system-ui','Segoe UI','Roboto','Inter','Arial'] },
+      }
+    }
+  }
+</script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-ui antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-emerald-600 text-white px-3 py-2 rounded">
+  Skip to content
+</a>
+
+<header class="border-b border-slate-800/60 bg-slate-900/60 backdrop-blur supports-[backdrop-filter]:bg-slate-900/40">
+  <div class="mx-auto max-w-7xl px-4 py-4 flex items-center gap-3">
+    <div class="relative w-8 h-8 rounded-full bg-emerald-500 shadow-[0_0_20px_#10b981]"></div>
+    <h1 class="text-2xl md:text-3xl font-semibold tracking-wide">Timer and Countdown</h1>
+    <div class="ml-auto flex items-center gap-2" id="global-actions" aria-label="Global actions">
+      <!-- Populated by script -->
+    </div>
+  </div>
+</header>
+
+<main id="main" class="mx-auto max-w-7xl px-4 py-6">
+  <section id="toolbar" class="mb-4" aria-label="Toolbar"></section>
+  <section id="board" class="grid gap-6" aria-label="Timers board"></section>
+  <section id="focus" class="hidden" aria-label="Focused timer view"></section>
+</main>
+
+<footer class="mt-16 px-4 py-8 text-center text-slate-400 text-sm">
+  <p>Built with accessibility in mind (WCAG AA) — Keyboard: Space (start/pause), C (clear), F (focus), / (search).</p>
+</footer>
+
+<!-- Modal root -->
+<div id="modal-root" class="fixed inset-0 hidden" aria-hidden="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
